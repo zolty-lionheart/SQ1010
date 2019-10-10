@@ -1,0 +1,36 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="cjsj" name="创建时间" value="${item.cjsj}" readonly="readonly"/>
+                            <#input id="rwmc" name="任务名称" value="${item.rwmc}" readonly="readonly"/>
+                            <#input id="zt" name="状态" value="${item.zt}" readonly="readonly"/>
+                            <#input id="cjzs" name="场景总数" value="${item.cjzs}" readonly="readonly"/>
+                            <#input id="tgf" name="通过否" value="${item.tgf}" readonly="readonly"/>
+                            <#input id="tgs" name="通过数" value="${item.tgs}" readonly="readonly"/>
+                            <#input id="wtgs" name="未通过数" value="${item.wtgs}" readonly="readonly"/>
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="yxsj" name="运行时间" value="${item.yxsj}" readonly="readonly"/>
+                            <#input id="dbl" name="丢包率" value="${item.dbl}" readonly="readonly"/>
+                            <#input id="wbl" name="误报率" value="${item.wbl}" readonly="readonly"/>
+                            <#input id="txyc" name="通信延迟" value="${item.txyc}" readonly="readonly"/>
+                            <#input id="jsnl" name="计算能力" value="${item.jsnl}" readonly="readonly"/>
+                            <#input id="tgl" name="通过率" value="${item.tgl}" readonly="readonly"/>
+                            <#input id="jg" name="总结" value="${item.jg}" readonly="readonly"/>
+                </div>
+            </div>
+            <#input id="id" name="" value="${item.id}"  type="hidden"/>
+            <h3>测试详情</h3>
+            <#table id="TestlogTable"/>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/system/lxrw/lxrw_info.js"></script>
+<script src="${ctxPath}/static/modular/system/testlog/testlog.js"></script>
+@}

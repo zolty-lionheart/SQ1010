@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<!--startprint1-->
+<table  width="100%" height="400" border="1">
+	<div>
+		<div style="text-align:center;">
+			<h1>测试总结</h1>
+		</div>
+		<tr>
+			<th colspan="1">单位</th>
+			<th colspan="3">${item.szdw}</th>
+			<th colspan="1">序号</th>
+			<th colspan="3">(${item.nd})科技字(${item.bkdxh})号</th>
+		</tr>
+		<tr>
+			<th colspan="1">项目名称</th>
+			<th colspan="7">${item.xmmc}</th>
+
+		</tr>
+		<tr>
+			<th colspan="1">项目负责人</th>
+			<th colspan="1">${item.fzr}</th>
+			<th colspan="1">工作证号</th>
+			<th colspan="1">${item.gzzh}</th>
+			<th colspan="1">项目来源</th>
+			<th colspan="3">${item.xmly}</th>
+		</tr>
+		<tr>
+			<th colspan="1">经费来源</th>
+			<th colspan="3">${item.jfly}</th>
+			<th colspan="1">到账经费</th>
+			<th colspan="1">${item.dkjf}</th>
+			<th colspan="1">净收入</th>
+			<th colspan="1">${item.jsr}</th>
+		</tr>
+		<tr>
+			<th colspan="1">经费卡号</th>
+			<th colspan="3">${item.jfkh}</th>
+			<th colspan="2">间接费用(课题组)</th>
+			<th colspan="2">${item.jjfqtktz}</th>
+		</tr>
+		<tr>
+			<th colspan="1">管理费</th>
+			<th colspan="3">${item.glf}</th>
+			<th colspan="1">增值税</th>
+			<th colspan="1">${item.sj}</th>
+			<th colspan="1">附加税</th>
+			<th colspan="1">${item.fjs}</th>
+		</tr>
+		<tr>
+			<th colspan="1">备注</th>
+			<th colspan="7" style="text-align:left;">${item.bz}<br><br>${item.bz1}</th>
+		</tr>
+		<tr>
+			<th colspan="1">责任人</th>
+			<th colspan="3">       </th>
+			<th colspan="1">经办人</th>
+			<th colspan="3">       </th>
+		</tr>
+	</div>
+</table>
+<div>
+	<p style="float:left">吉林大学科技处</p>
+	<p style="float:right">日期：${item.dksj}</p>
+</div>
+<div>
+	<br><br><br>
+	${ys}
+</div>
+<!--endprint1-->
+</body>
+<br><br><br>
+<#button name="打印" icon="fa-remove" clickFun="preview(1)" space="true"/>
+</html>
+<script language="javascript">
+	function preview(oper){
+		if (oper < 10){
+			bdhtml=window.document.body.innerHTML;//获取当前页的html代码
+			sprnstr="<!--startprint"+oper+"-->";//设置打印开始区域
+			eprnstr="<!--endprint"+oper+"-->";//设置打印结束区域
+			prnhtml=bdhtml.substring(bdhtml.indexOf(sprnstr)+18); //从开始代码向后取html
+			prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));//从结束代码向前取html
+			window.document.body.innerHTML=prnhtml;
+			window.print();
+			window.document.body.innerHTML=bdhtml;
+		}
+		else {
+			window.print();
+		}
+	}
+</script>
+                 

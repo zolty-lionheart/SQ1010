@@ -1,0 +1,48 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="cjsj" name="创建时间" underline="true"/>
+                            <#input id="rwmc" name="任务名称" underline="true"/>
+                            <#select id="zt" name="状态" underline="true">
+                            <option value="">请选择</option>
+                            <option>运行中</option>
+                            <option>未完成</option>
+                            <option>已完成</option>
+                            </#select>
+                            <#input id="cjzs" name="场景总数" underline="true"/>
+                            <#select id="tgf" name="通过否" underline="true">
+                            <option value="">请选择</option>
+                            <option>通过</option>
+                            <option>不通过</option>
+                            </#select>
+                            <#input id="tgs" name="通过数" underline="true"/>
+                            <#input id="wtgs" name="未通过数" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="yxsj" name="运行时间" underline="true"/>
+                            <#input id="dbl" name="丢包率" underline="true"/>
+                            <#input id="wbl" name="误报率" underline="true"/>
+                            <#input id="txyc" name="通信延迟" underline="true"/>
+                            <#input id="jsnl" name="计算能力" underline="true"/>
+                            <#input id="tgl" name="通过率" underline="true"/>
+                            <#input id="jg" name="总结" />
+                </div>
+            </div>
+            <#input id="id" name="" type="hidden"/>
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="LxrwInfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="LxrwInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/system/lxrw/lxrw_info.js"></script>
+@}

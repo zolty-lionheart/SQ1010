@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.system.dao.LxrwMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.system.model.Lxrw">
+        <id column="id" property="id" />
+        <result column="cjsj" property="cjsj" />
+        <result column="rwmc" property="rwmc" />
+        <result column="zt" property="zt" />
+        <result column="cjzs" property="cjzs" />
+        <result column="tgf" property="tgf" />
+        <result column="tgs" property="tgs" />
+        <result column="wtgs" property="wtgs" />
+        <result column="tgl" property="tgl" />
+        <result column="jg" property="jg" />
+        <result column="yxsj" property="yxsj" />
+        <result column="dbl" property="dbl" />
+        <result column="wbl" property="wbl" />
+        <result column="txyc" property="txyc" />
+        <result column="jsnl" property="jsnl" />
+        <result column="ddl5" property="ddl5" />
+        <result column="ddl6" property="ddl6" />
+        <result column="ddl7" property="ddl7" />
+        <result column="ddl8" property="ddl8" />
+        <result column="ddl9" property="ddl9" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, cjsj, rwmc, zt, cjzs, tgf, tgs, wtgs, tgl, jg, yxsj, dbl, wbl, txyc, jsnl, ddl5, ddl6, ddl7, ddl8, ddl9
+    </sql>
+    <update id="testReport">
+      UPDATE guns.lxrw set tgf =if( (SELECT  count(*) as vtd  from guns.dangerMessageVTD) *(SELECT  count(*) as ibox from guns.dangerMessageIBOX),'通过','不通过') where id =#{xh}
+    </update>
+
+</mapper>
